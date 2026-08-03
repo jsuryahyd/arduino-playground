@@ -1,0 +1,10 @@
+# Ignore credentials
+**/secrets.h
+
+# Ignore build artifacts & logs
+*.log
+serial.log
+build/
+*.o
+*.elf
+test_runner

@@ -1,0 +1,49 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Arduino: Compile & Upload Active Sketch",
+      "type": "shell",
+      "command": "fuser -k /dev/ttyACM0 2>/dev/null || true; sleep 1; SKETCH=\"${fileDirname}\"; if ls \"$SKETCH\"/*.ino 1>/dev/null 2>&1; then TARGET=\"$SKETCH\"; else TARGET=\"${workspaceFolder}/servo_control\"; fi; /home/surya/.local/bin/arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi \"$TARGET\" && /home/surya/.local/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:renesas_uno:unor4wifi \"$TARGET\"",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Arduino: Servo Control - Compile & Upload",
+      "type": "shell",
+      "command": "fuser -k /dev/ttyACM0 2>/dev/null || true; sleep 1; /home/surya/.local/bin/arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi \"${workspaceFolder}/servo_control\" && /home/surya/.local/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:renesas_uno:unor4wifi \"${workspaceFolder}/servo_control\"",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Arduino: Servo Control - Compile (Verify Only)",
+      "type": "shell",
+      "command": "/home/surya/.local/bin/arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi \"${workspaceFolder}/servo_control\"",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Arduino: Run Native C++ Tests (100% Offline)",
+      "type": "shell",
+      "command": "${workspaceFolder}/tests/run_tests.sh",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Arduino: Compile Active Sketch (Verify Only)",
+      "type": "shell",
+      "command": "SKETCH=\"${fileDirname}\"; if ls \"$SKETCH\"/*.ino 1>/dev/null 2>&1; then TARGET=\"$SKETCH\"; else TARGET=\"${workspaceFolder}/servo_control\"; fi; /home/surya/.local/bin/arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi \"$TARGET\"",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Arduino: Open Serial Monitor",
+      "type": "shell",
+      "command": "/home/surya/.local/bin/arduino-cli monitor -p /dev/ttyACM0 -c baudrate=115200",
+      "problemMatcher": []
+    }
+  ]
+}

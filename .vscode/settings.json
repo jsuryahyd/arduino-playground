@@ -1,0 +1,13 @@
+{
+  "C_Cpp.default.compilerPath": "/home/surya/.arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/arm-none-eabi-g++",
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/**",
+    "/home/surya/.arduino15/packages/arduino/hardware/renesas_uno/1.6.0/cores/arduino",
+    "/home/surya/.arduino15/packages/arduino/hardware/renesas_uno/1.6.0/libraries/**"
+  ],
+  "C_Cpp.default.cStandard": "c11",
+  "C_Cpp.default.cppStandard": "c++17",
+  "files.associations": {
+    "*.ino": "cpp"
+  }
+}
