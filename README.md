@@ -14,7 +14,8 @@ This repository documents my progressive journey in microcontrollers, embedded C
 | **1. Built-in LED Matrix** | [`led_matrix_demo/`](file:///home/surya/development/arduino/arduino-playground/led_matrix_demo) | 12x8 LED Matrix graphics & animations | 2D pixel arrays, 32-bit bitmask frames, gallery animation sequences | ✅ Complete |
 | **2. Wi-Fi Web Server** | [`wifi_dashboard/`](file:///home/surya/development/arduino/arduino-playground/wifi_dashboard) | Web server dashboard & Wi-Fi control | `WiFiS3.h`, credential security with `secrets.h`, HTML dynamic responses | ✅ Complete |
 | **3. Servo & Robotics** | [`servo_control/`](file:///home/surya/development/arduino/arduino-playground/servo_control) | Object-Oriented servo motor controller | PWM control, OOP state encapsulation, Sinusoidal Easing, Live LED Matrix Gauge | ✅ Complete |
-| **4. Next Steps** | *TBD* | Sensors, Stepper Motors, & ROS / IoT | Sensor integration, I2C/SPI buses, closed-loop feedback control | 🔄 Planned |
+| **4. Web Servo (Active)** | [`web_servo_control/`](file:///home/surya/development/arduino/arduino-playground/web_servo_control) | IoT Web Dashboard + Servo Motor + LED Matrix | Wireless HTTP control, dynamic UI, LED gauge, non-blocking modes | 🚀 In Progress |
+| **5. Roadmap & Inventory** | [`ROADMAP.md`](file:///home/surya/development/arduino/arduino-playground/ROADMAP.md) / [`catalog.json`](file:///home/surya/development/arduino/arduino-playground/catalog.json) | Hardware inventory & upcoming learning modules | Ultrasonic radar, Stepper motors, BLE/MQTT, procurement list | 📋 Planned |
 
 ---
 

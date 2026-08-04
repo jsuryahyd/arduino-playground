@@ -19,6 +19,10 @@ typedef uint8_t byte;
 #define F(string_literal) string_literal
 #endif
 
+#ifndef PROGMEM
+#define PROGMEM
+#endif
+
 // Arduino map function mock
 inline long map(long x, long in_min, long in_max, long out_min, long out_max) {
     if (in_max == in_min) return out_min;
@@ -64,7 +68,22 @@ public:
     }
 
     bool startsWith(const String& prefix) const {
-        return rfind(prefix, 0) == 0;
+        return find(prefix, 0) == 0;
+    }
+
+    bool endsWith(const String& suffix) const {
+        if (suffix.length() > length()) return false;
+        return compare(length() - suffix.length(), suffix.length(), suffix) == 0;
+    }
+
+    int indexOf(const String& str, size_t from = 0) const {
+        size_t pos = find(str, from);
+        return (pos == std::string::npos) ? -1 : (int)pos;
+    }
+
+    int indexOf(const char* str, size_t from = 0) const {
+        size_t pos = find(str ? str : "", from);
+        return (pos == std::string::npos) ? -1 : (int)pos;
     }
 
     String substring(size_t from) const {

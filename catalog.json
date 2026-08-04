@@ -1,0 +1,120 @@
+{
+  "project": "Arduino UNO R4 WiFi & Robotics Playground",
+  "last_updated": "2026-08-05",
+  "board": {
+    "name": "Arduino UNO R4 WiFi",
+    "mcu": "Renesas RA4M1 (32-bit ARM Cortex-M4 @ 48 MHz)",
+    "wireless": "ESP32-S3 (Wi-Fi 802.11 b/g/n & BLE 5.0)",
+    "display": "Built-in 12x8 LED Matrix",
+    "operating_voltage": "5V logic (RA4M1 input 5V compatible)"
+  },
+  "inventory": {
+    "microcontrollers": [
+      {
+        "id": "mcu-uno-r4-wifi",
+        "name": "Arduino UNO R4 WiFi",
+        "quantity": 1,
+        "status": "Active"
+      }
+    ],
+    "actuators": [
+      {
+        "id": "act-sg90",
+        "name": "SG90 Micro Servo Motor",
+        "type": "Servo Motor",
+        "operating_voltage": "4.8V - 6V",
+        "control": "PWM (50 Hz, 500-2500us)",
+        "quantity": 1,
+        "status": "Active"
+      },
+      {
+        "id": "act-mg995",
+        "name": "MG995 High Torque Servo Motor",
+        "type": "Servo Motor",
+        "operating_voltage": "4.8V - 7.2V",
+        "control": "PWM",
+        "quantity": 1,
+        "status": "Active"
+      }
+    ],
+    "sensors": [
+      {
+        "id": "sen-hc-sr04",
+        "name": "HC-SR04 Ultrasonic Distance Sensor",
+        "type": "Distance / Proximity",
+        "interface": "GPIO (Trigger & Echo)",
+        "operating_voltage": "5V",
+        "range_cm": "2cm - 400cm",
+        "quantity": 1,
+        "status": "Available"
+      }
+    ],
+    "displays": [
+      {
+        "id": "disp-led-matrix-r4",
+        "name": "Built-in 12x8 LED Matrix Grid",
+        "type": "LED Matrix",
+        "interface": "Internal IS31FL3730 matrix driver",
+        "status": "Active"
+      }
+    ]
+  },
+  "procurement_wishlist": [
+    {
+      "priority": 1,
+      "category": "Sensors",
+      "item": "MPU-6050 6-DOF Accelerometer & Gyroscope Module",
+      "interface": "I2C (0x68)",
+      "est_price_usd": "$2 - $4",
+      "rationale": "Enables gesture control, motion tracking, self-balancing robotics, and IMU sensor fusion."
+    },
+    {
+      "priority": 2,
+      "category": "Motors & Drivers",
+      "item": "28BYJ-48 Stepper Motor + ULN2003 Driver Board",
+      "interface": "4-wire GPIO",
+      "est_price_usd": "$3 - $5",
+      "rationale": "Essential for learning non-blocking stepper motor control, microstepping, and positional accuracy without sweep jitter."
+    },
+    {
+      "priority": 3,
+      "category": "Displays",
+      "item": "0.96 inch I2C OLED Display Module (SSD1306, 128x64)",
+      "interface": "I2C (0x3C)",
+      "est_price_usd": "$3 - $5",
+      "rationale": "Provides high-resolution text, menus, telemetry charts, and graphics alongside the 12x8 LED Matrix."
+    },
+    {
+      "priority": 4,
+      "category": "Sensors",
+      "item": "BME280 Temperature, Humidity & Barometric Pressure Sensor",
+      "interface": "I2C (0x76 / 0x77)",
+      "est_price_usd": "$4 - $7",
+      "rationale": "High precision environmental monitoring for IoT Web Dashboards."
+    },
+    {
+      "priority": 5,
+      "category": "Sensors",
+      "item": "VL53L0X Time-of-Flight (ToF) Laser Distance Sensor",
+      "interface": "I2C (0x29)",
+      "est_price_usd": "$4 - $6",
+      "rationale": "Millimeter-precise laser distance measurements without ultrasonic reflection acoustic interference."
+    },
+    {
+      "priority": 6,
+      "category": "Controls & Inputs",
+      "item": "EC11 Rotary Encoder with Push Button",
+      "interface": "GPIO Digital Pins + Interrupts",
+      "est_price_usd": "$1 - $2",
+      "rationale": "Allows smooth manual menu navigation and precise motor target angle dialling on physical hardware."
+    },
+    {
+      "priority": 7,
+      "category": "Motors & Drivers",
+      "item": "TB6612FNG Dual DC Motor Driver",
+      "interface": "PWM + Direction GPIO Pins",
+      "est_price_usd": "$3 - $5",
+      "rationale": "Efficient MOSFET motor driver for building a 2WD / 4WD mobile robot platform."
+    }
+  ]
+}

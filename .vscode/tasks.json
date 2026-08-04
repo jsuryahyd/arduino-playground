@@ -4,11 +4,18 @@
     {
       "label": "Arduino: Compile & Upload Active Sketch",
       "type": "shell",
-      "command": "fuser -k /dev/ttyACM0 2>/dev/null || true; sleep 1; SKETCH=\"${fileDirname}\"; if ls \"$SKETCH\"/*.ino 1>/dev/null 2>&1; then TARGET=\"$SKETCH\"; else TARGET=\"${workspaceFolder}/servo_control\"; fi; /home/surya/.local/bin/arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi \"$TARGET\" && /home/surya/.local/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:renesas_uno:unor4wifi \"$TARGET\"",
+      "command": "fuser -k /dev/ttyACM0 2>/dev/null || true; sleep 1; SKETCH=\"${fileDirname}\"; if ls \"$SKETCH\"/*.ino 1>/dev/null 2>&1; then TARGET=\"$SKETCH\"; else TARGET=\"${workspaceFolder}/web_servo_control\"; fi; /home/surya/.local/bin/arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi \"$TARGET\" && /home/surya/.local/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:renesas_uno:unor4wifi \"$TARGET\"",
       "group": {
         "kind": "build",
         "isDefault": true
       },
+      "problemMatcher": []
+    },
+    {
+      "label": "Arduino: Web Servo Control - Compile & Upload",
+      "type": "shell",
+      "command": "fuser -k /dev/ttyACM0 2>/dev/null || true; sleep 1; /home/surya/.local/bin/arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi \"${workspaceFolder}/web_servo_control\" && /home/surya/.local/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:renesas_uno:unor4wifi \"${workspaceFolder}/web_servo_control\"",
+      "group": "build",
       "problemMatcher": []
     },
     {
@@ -19,24 +26,10 @@
       "problemMatcher": []
     },
     {
-      "label": "Arduino: Servo Control - Compile (Verify Only)",
-      "type": "shell",
-      "command": "/home/surya/.local/bin/arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi \"${workspaceFolder}/servo_control\"",
-      "group": "build",
-      "problemMatcher": []
-    },
-    {
       "label": "Arduino: Run Native C++ Tests (100% Offline)",
       "type": "shell",
       "command": "${workspaceFolder}/tests/run_tests.sh",
       "group": "test",
-      "problemMatcher": []
-    },
-    {
-      "label": "Arduino: Compile Active Sketch (Verify Only)",
-      "type": "shell",
-      "command": "SKETCH=\"${fileDirname}\"; if ls \"$SKETCH\"/*.ino 1>/dev/null 2>&1; then TARGET=\"$SKETCH\"; else TARGET=\"${workspaceFolder}/servo_control\"; fi; /home/surya/.local/bin/arduino-cli compile --fqbn arduino:renesas_uno:unor4wifi \"$TARGET\"",
-      "group": "build",
       "problemMatcher": []
     },
     {

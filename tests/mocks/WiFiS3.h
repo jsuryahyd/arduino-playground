@@ -87,6 +87,7 @@ public:
     void begin() { _running = true; }
 
     void injectMockClient(const std::string& httpRequest) {
+        _pending_client = WiFiClient();
         _pending_client.pushRequest(httpRequest);
         _has_client = true;
     }
